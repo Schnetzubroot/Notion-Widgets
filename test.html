@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Weeks Since Widget</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: white;
+      color: #111;
+    }
+    .container {
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="weeks"></div>
+
+  <script>
+    // >>> CHANGE THIS DATE <<<
+    const startDate = new Date("2025-08-18");  
+
+    function updateWeeks() {
+      const now = new Date();
+      const diffMs = now - startDate;
+      const weeks = diffMs / (1000 * 60 * 60 * 24 * 7);
+      document.getElementById("weeks").textContent =
+        "Woche " + Math.ceil(weeks);
+    }
+
+    updateWeeks();
+  </script>
+</body>
+</html>
